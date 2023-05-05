@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: git fetch
-      - run: git push --no-verify -f origin test
+      - run: git push --no-verify -f origin HEAD:test
