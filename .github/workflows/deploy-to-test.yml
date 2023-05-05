@@ -1,0 +1,18 @@
+name: Deploy Dev to Testing Branch
+
+on:
+  workflow_dispatch:
+    environment:
+      description: "Deploy to Testing Branch (Triggers AWS CodePipeline)"
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    environment: test
+    steps:
+      - uses: actions/checkout@v3
+      - run: git fetch
+      - run: git push --no-verify -f origin main:test
