@@ -1,4 +1,4 @@
-name: Deploy Dev to Testing Branch
+name: Deploy to Testing
 
 on:
   workflow_dispatch:
